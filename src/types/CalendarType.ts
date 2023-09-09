@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export type CalenderType = {
+export type CalendarType = {
   months?: number;
   gridSize?: string;
   gap?: string;

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FormatData } from "../utils/FormatData";
 import ToolTip from "./ToolTip";
-import { CalenderType } from "../types/CalenderType";
+import { CalendarType } from "../types/CalendarType";
 
 function Calendar({
   months = 3,
@@ -16,7 +16,7 @@ function Calendar({
   tooltipTextColor = "white",
   tooltipLabel = "activity",
   tooltipStyle,
-}: CalenderType) {
+}: CalendarType) {
   const activityChartRef = useRef<HTMLDivElement>(null);
   const days = ["", "Mon", "", "Wed", "", "Fri"];
   const { newData, monthObject } = FormatData(data, months);

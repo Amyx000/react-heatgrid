@@ -54,7 +54,7 @@ export default MyCalendar;
 
 | Prop               | Description                                                                                                                             | Default Value |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `months`           | The number of months to display in the calendar.                                                                                        | 12            |
+| `months`           | The number of months to display in the calendar.                                                                                        | 3             |
 | `gridSize`         | The size of each grid cell in the calendar.                                                                                             | "20px"        |
 | `gap`              | The gap between grid cells in the calendar.                                                                                             | "2px"         |
 | `data`             | An array of data objects representing each day in the calendar. Each object should have a 'value' (number) and 'day' (string) property. | Required      |
