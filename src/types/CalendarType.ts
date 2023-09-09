@@ -7,7 +7,9 @@ export type CalendarType = {
   data: { value: number; day: string }[];
   colors: string[];
   fontSize: string;
+  fontColor: string;
   DisabledToolTip?: boolean;
+  DisabledLegend?: boolean;
   placement?: "top" | "bottom";
   tooltipBg?: string;
   tooltipTextColor?: string;

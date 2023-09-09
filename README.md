@@ -4,7 +4,6 @@ React HeatGrid is a versatile and customizable heatmap component for React appli
 
 <img src="https://github.com/Amyx000/react-heatgrid/assets/104687128/81268e28-2c18-431b-8945-ce22295d4077" width="300" alt="HeatGrid Demo">
 
-
 ToolTip when hover on each grid.
 
 <img src="https://github.com/Amyx000/react-heatgrid/assets/104687128/60e4a279-e7b1-4274-9679-fa1b6fe70c3c" width="300" alt="HeatGrid Demo">
@@ -31,12 +30,7 @@ const MyCalendar = () => {
     // Add more data entries for each day
   ];
 
-  const heatmapColors = [
-    '#FFFFFF',
-    '#FFD700',
-    '#FFA500',
-    // Add more colors for your heatmap
-  ];
+  const heatmapColors = ["#161b22","#0e4429","#006d32","#26a641","#39d353"];
 
   return (
     <div>
@@ -65,7 +59,9 @@ export default MyCalendar;
 | `data`             | An array of data objects representing each day in the calendar. Each object should have a 'value' (number) and 'day' (string) property. | Required      |
 | `colors`           | An array of colors from low intensity to high. e.g ["#161b22","#0e4429","#006d32","#26a641","#39d353"]                                  | Required      |
 | `fontSize`         | Size of text throughout the calendar.                                                                                                   | "12px"        |
+| `fontColor`        | Color of the text                                                                                                                       | "black"       |
 | `DisabledToolTip`  | Disable tooltips for grid cells.                                                                                                        | false         |
+| `DisabledLegend`   | Disable the legend of chart                                                                                                             | false         |
 | `placement`        | The placement of tooltips relative to the grid cell ("top" or "bottom").                                                                | "top"         |
 | `tooltipBg`        | The background color of tooltips.                                                                                                       | "#303030"     |
 | `tooltipTextColor` | The text color of tooltips.                                                                                                             | "white"       |

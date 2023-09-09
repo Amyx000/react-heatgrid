@@ -10,7 +10,9 @@ function Calendar({
   data,
   colors = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   fontSize = "12px",
+  fontColor = "black",
   DisabledToolTip = false,
+  DisabledLegend = false,
   placement = "top",
   tooltipBg = "#303030",
   tooltipTextColor = "white",
@@ -41,6 +43,7 @@ function Calendar({
         position: "relative",
         padding: "20px",
         fontSize,
+        color: fontColor,
         width: "max-content",
       }}
     >
@@ -110,40 +113,42 @@ function Calendar({
             })}
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            marginTop: "10px",
-          }}
-        >
+        {!!DisabledLegend && (
           <div
             style={{
               display: "flex",
-              gap: "5px",
-              alignItems: "center",
+              justifyContent: "flex-end",
+              marginTop: "10px",
             }}
           >
-            <div>Less</div>
-            <div style={{ display: "flex", gap }}>
-              {colors.map((item, i) => {
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      backgroundColor: item,
-                      width: gridSize,
-                      height: gridSize,
-                      border: "1px solid #e2e8f0",
-                      borderRadius: "2px",
-                    }}
-                  />
-                );
-              })}
+            <div
+              style={{
+                display: "flex",
+                gap: "5px",
+                alignItems: "center",
+              }}
+            >
+              <div>Less</div>
+              <div style={{ display: "flex", gap }}>
+                {colors.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        backgroundColor: item,
+                        width: gridSize,
+                        height: gridSize,
+                        border: "1px solid #e2e8f0",
+                        borderRadius: "2px",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+              <div>More</div>
             </div>
-            <div>More</div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
