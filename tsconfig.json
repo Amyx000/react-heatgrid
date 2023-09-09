@@ -1,0 +1,14 @@
+{
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "react",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist/src",
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

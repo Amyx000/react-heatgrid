@@ -1,0 +1,42 @@
+{
+  "name": "react-heatgrid",
+  "version": "1.0.0",
+  "description": "React HeatGrid: Easily integrate customizable, interactive heatmaps into your React applications for data visualization.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amyx000/react-heatgrid.git"
+  },
+  "keywords": [
+    "heatgrid",
+    "heatmap",
+    "contribution-chart",
+    "calendar-chart",
+    "contribution",
+    "react",
+    "typescript"
+  ],
+  "author": "Arman Kazi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amyx000/react-heatgrid/issues"
+  },
+  "homepage": "https://github.com/Amyx000/react-heatgrid#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "react": "^18.2.0"
+  },
+  "files": [
+    "dist/"
+  ]
+}
