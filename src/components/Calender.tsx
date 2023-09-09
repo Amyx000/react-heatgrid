@@ -37,7 +37,12 @@ function Calendar({
   return (
     <div
       ref={activityChartRef}
-      style={{ position: "relative", padding: "20px", fontSize }}
+      style={{
+        position: "relative",
+        padding: "20px",
+        fontSize,
+        width: "max-content",
+      }}
     >
       <div>
         <div
@@ -96,7 +101,7 @@ function Calendar({
                         width: gridSize,
                         height: gridSize,
                         borderRadius: "2px",
-                        border: "1px solid inherit",
+                        border: "1px solid #e2e8f0",
                       }}
                     />
                   </ToolTip>
@@ -129,7 +134,7 @@ function Calendar({
                       backgroundColor: item,
                       width: gridSize,
                       height: gridSize,
-                      border: "1px solid inherit",
+                      border: "1px solid #e2e8f0",
                       borderRadius: "2px",
                     }}
                   />
