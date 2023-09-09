@@ -2,7 +2,11 @@
 
 React HeatGrid is a versatile and customizable heatmap component for React applications.
 
-![HeatGrid Demo](link_to_demo_image.png)
+![HeatGrid Demo](https://github.com/Amyx000/react-heatgrid/assets/104687128/81268e28-2c18-431b-8945-ce22295d4077)
+
+ToolTip when hover on each grid.
+
+![HeatGrid Demo](https://github.com/Amyx000/react-heatgrid/assets/104687128/60e4a279-e7b1-4274-9679-fa1b6fe70c3c)
 
 ## Installation
 
