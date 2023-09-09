@@ -43,7 +43,7 @@ export const FormatData = (
 
     const existingData = newData.find((item) => {
       if (isNaN(new Date(item.day).getTime())) {
-        throw new TypeError("Invalid day is not a type of date");
+        throw new TypeError("Invalid day, It's is not a type of date");
       }
       const formatedDate =
         dateFormat === "yyyy-mm-dd"
@@ -88,7 +88,9 @@ export const FormatData = (
     }
   }
 
-  newData.sort((a, b) => (a.day > b.day ? 1 : -1));
+  newData.sort((a, b) =>
+    new Date(a.day).getTime() > new Date(b.day).getTime() ? 1 : -1
+  );
 
   // Create an array of objects for month counts with index field
   let monthCountArray: { month: string; count: number; index: number }[] = [];
