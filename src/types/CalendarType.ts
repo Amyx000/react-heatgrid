@@ -5,6 +5,7 @@ export type CalendarType = {
   gridSize?: string;
   gap?: string;
   data: { value: number; day: string }[];
+  dateFormat?: "yyyy-mm-dd" | "WeekDay, Month Date, Year";
   colors: string[];
   fontSize: string;
   fontColor: string;

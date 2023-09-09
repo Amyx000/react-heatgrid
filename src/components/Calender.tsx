@@ -8,6 +8,7 @@ function Calendar({
   gridSize = "15px",
   gap = "2px",
   data,
+  dateFormat = "yyyy-mm-dd",
   colors = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   fontSize = "12px",
   fontColor = "black",
@@ -21,7 +22,7 @@ function Calendar({
 }: CalendarType) {
   const activityChartRef = useRef<HTMLDivElement>(null);
   const days = ["", "Mon", "", "Wed", "", "Fri"];
-  const { newData, monthObject } = FormatData(data, months);
+  const { newData, monthObject } = FormatData(data, months, dateFormat);
   const cells = newData;
   const maxValue =
     cells.reduce(
@@ -113,7 +114,7 @@ function Calendar({
             })}
           </div>
         </div>
-        {!!DisabledLegend && (
+        {!DisabledLegend && (
           <div
             style={{
               display: "flex",

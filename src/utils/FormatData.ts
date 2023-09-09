@@ -1,7 +1,18 @@
+function hasValueAndDay(obj: object) {
+  return "value" in obj && "day" in obj;
+}
+
 export const FormatData = (
   ActivityData: { value: number; day: string }[],
-  months: number
+  months: number,
+  dateFormat: "yyyy-mm-dd" | "WeekDay, Month Date, Year"
 ) => {
+  if (!Array.isArray(ActivityData)) {
+    throw new TypeError("Data must be an array");
+  }
+  if (!ActivityData.every(hasValueAndDay)) {
+    throw new TypeError("Data must have value and day field in array");
+  }
   const newData = [...ActivityData];
   const endDate = new Date();
   const startDate = new Date(endDate);
@@ -20,11 +31,48 @@ export const FormatData = (
     currentDate <= endDate;
     currentDate.setDate(currentDate.getDate() + 1)
   ) {
-    const dateString = currentDate.toISOString().split("T")[0];
-    const existingData = newData.find((item) => item.day === dateString);
+    const dateString =
+      dateFormat === "yyyy-mm-dd"
+        ? currentDate.toISOString().split("T")[0]
+        : currentDate.toLocaleString("en-US", {
+            weekday: "short",
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          });
+
+    const existingData = newData.find((item) => {
+      if (isNaN(new Date(item.day).getTime())) {
+        throw new TypeError("Invalid day is not a type of date");
+      }
+      const formatedDate =
+        dateFormat === "yyyy-mm-dd"
+          ? new Date(item.day).toISOString().split("T")[0]
+          : new Date(item.day).toLocaleString("en-US", {
+              weekday: "short",
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            });
+      return formatedDate === dateString;
+    });
 
     if (!existingData) {
       newData.push({ day: dateString, value: 0 });
+    } else {
+      const { day, value } = newData[0];
+      newData[0] = {
+        day:
+          dateFormat === "yyyy-mm-dd"
+            ? new Date(day).toISOString().split("T")[0]
+            : new Date(day).toLocaleString("en-US", {
+                weekday: "short",
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              }),
+        value,
+      };
     }
 
     // Get the short month name from the current date
