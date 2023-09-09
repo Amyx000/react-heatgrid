@@ -1,6 +1,6 @@
 {
   "name": "react-heatgrid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React HeatGrid: Easily integrate customizable, interactive heatmaps into your React applications for data visualization.",
   "main": "dist/src/index.js",
   "scripts": {
