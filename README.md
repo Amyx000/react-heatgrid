@@ -67,3 +67,4 @@ export default MyCalendar;
 | `tooltipTextColor` | The text color of tooltips.                                                                                                             | "white"       |
 | `tooltipLabel`     | The label for the tooltip, which can be one of "activity", "contributions", or a custom string.                                         | "activity"    |
 | `tooltipStyle`     | Additional CSS styles to apply to the tooltip. e.g {border:"1px solid red"}                                                             | None          |
+| `dateFormat`       | Either "yyyy-mm-dd" (e.g 2023-01-31) or "WeekDay, Month Date, Year" (e.g Tue, Jan 31, 2023)                                             | "yyyy-mm-dd"  |
