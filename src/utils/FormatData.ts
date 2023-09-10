@@ -41,7 +41,7 @@ export const FormatData = (
             year: "numeric",
           });
 
-    const existingData = newData.find((item) => {
+    const existingDataIndex = newData.findIndex((item) => {
       if (isNaN(new Date(item.day).getTime())) {
         throw new TypeError("Invalid day, It's is not a type of date");
       }
@@ -57,11 +57,11 @@ export const FormatData = (
       return formatedDate === dateString;
     });
 
-    if (!existingData) {
+    if (existingDataIndex === -1) {
       newData.push({ day: dateString, value: 0 });
     } else {
-      const { day, value } = newData[0];
-      newData[0] = {
+      const { day, value } = newData[existingDataIndex];
+      newData[existingDataIndex] = {
         day:
           dateFormat === "yyyy-mm-dd"
             ? new Date(day).toISOString().split("T")[0]
