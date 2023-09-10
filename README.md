@@ -26,8 +26,17 @@ import { Calendar } from 'react-heatgrid';
 
 const MyCalendar = () => {
   const calendarData = [
-    { value: 10, day: '2023-09-01' },
-    // Add more data entries for each day
+   { value: 9, day: '2023-08-23' },
+    { value: 20, day: '2023-08-10' },
+    { value: 49, day: '2023-07-17' },
+    { value: 45, day: '2023-08-21' },
+    { value: 7, day: '2023-07-23' },
+    { value: 11, day: '2023-08-15' },
+    { value: 28, day: '2023-08-26' },
+    { value: 11, day: '2023-09-07' },
+    { value: 27, day: '2023-09-08' },
+    // you can add random day, skip a day and day can be date format like...
+    { value: 27, day: new Date('2023-09-09') },
   ];
 
   const heatmapColors = ["#161b22","#0e4429","#006d32","#26a641","#39d353"];
@@ -36,7 +45,7 @@ const MyCalendar = () => {
     <div>
       <h1>My Calendar Heatmap</h1>
       <Calendar
-        months={12}                 {/* Number of months to display */}
+        months={3}                 {/* Number of months to display */}
         data={calendarData}         {/* Array of data objects */}
         colors={heatmapColors}      {/* Array of heatmap colors */}
         tooltipLabel="activity"     {/* Tooltip label */}
